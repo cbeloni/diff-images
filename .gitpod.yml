@@ -17,3 +17,6 @@ github:
         pullRequests: false
         # add a "Review in Gitpod" button as a comment to pull requests (defaults to true)
         addComment: false
+vscode:
+  extensions:
+    - ms-python.python@2020.10.332292344:5ctthQ25Qni5/aAuOIUTYQ==
