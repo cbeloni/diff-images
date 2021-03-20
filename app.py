@@ -1,14 +1,13 @@
 from flask import Flask
-from flask_restful import Resource, Api
-
+from flask import jsonify
 app = Flask(__name__)
-api = Api(app)
 
-class HelloWorld(Resource):
-    def get(self):
-        return {'hello': 'world'}
+todos = [{ "label": "My first task", "done": False }]
 
-api.add_resource(HelloWorld, '/')
+@app.route('/todos', methods=['GET'])
+def hello_world():
+    json_text = jsonify(todos)        
+    return json_text
 
 if __name__ == '__main__':
-    app.run(debug=True)
+  app.run(host='0.0.0.0', port=3245, debug=True)

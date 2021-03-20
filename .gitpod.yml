@@ -4,9 +4,11 @@ image:
 ports:
     - port: 3000
       onOpen: open-preview
+      
 tasks:
-    - command: >
-        learnpack start -g incremental
+    - init: pip3 install -r requirements.txt
+      command: python3 app.py
+
 github:
     prebuilds:
         # enable for the master/default branch (defaults to true)
