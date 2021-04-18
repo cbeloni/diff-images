@@ -2,21 +2,15 @@ from flask import Flask, redirect, url_for, request
 from flask import jsonify
 from src import CompareImage
 import os
-from werkzeug.utils import secure_filename
+from flask import Flask
+
 
 app = Flask(__name__)
 
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
-todos = [{ "label": "My first task", "done": False }]
 
-@app.route('/', methods=['GET'])
-def home():
-    return redirect(url_for('listar_todos'))
-
-@app.route('/todos', methods=['GET'])
-def listar_todos():
-    json_text = jsonify(todos)        
-    return json_text
+@app.route("/")
+def index():
+    return "<h1>Hello World</hi>"
 
 def allowed_file(filename):
     return '.' in filename and \
