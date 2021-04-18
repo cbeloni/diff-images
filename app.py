@@ -5,6 +5,7 @@ import os
 from flask import Flask
 
 app = Flask(__name__)
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 @app.route("/")
 def index():
