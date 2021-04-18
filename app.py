@@ -3,6 +3,7 @@ from flask import jsonify
 from src import CompareImage
 import os
 from flask import Flask
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
